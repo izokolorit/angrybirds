@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Angry Birds</title>
+    <!-- подключение стилей -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Underdog" rel="stylesheet">
+  </head>
+  <body>
+    <!-- блок с игрой -->
+    <div class="game">
+      <img id='cloud' src="./img/cloud.png" alt="cloud">
+      <img id='birds' src="./img/birds.gif" alt="birds">
+      <img id='player' src="./img/player.png" alt="rog">
+      <div class="boxes">
+        <img src="./img/box.png" alt="box" style='width: 45%;'>
+        <img src="./img/box.png" alt="box" style='width: 70%;'>
+        <img src="./img/box.png" alt="box" style='width: 100%;'>
+      </div>
+      <img src="./img/redbird.png" alt="bird" class='bird'>
+      <div class="controls">
+
+        <div class="" onclick='SetTraectory(player.offsetLeft + player.offsetWidth + a, player.offsetTop - b - 10)'>
+
+        </div>
+        <div class="" onclick='SetTraectory(player.offsetLeft + player.offsetWidth + a+10, player.offsetTop - b)'>
+
+        </div>
+
+        <div class="" onclick='SetTraectory(player.offsetLeft + player.offsetWidth + a - 10, player.offsetTop - b)'>
+
+        </div>
+
+                <div class="" onclick='SetTraectory(player.offsetLeft + player.offsetWidth + a , player.offsetTop - b + 10)'>
+
+                </div>
+        <div class="">
+          ПУСК
+        </div>
+      </div>
+      <div class="line">
+
+      </div>
+      <div class="field-to-click">
+
+      </div>
+      <div class="speed">
+        <input type="range" onchange="ChangeSpeed(this.value);" value='20' min='10' max='50' step='10'>
+        <input type="number" onchange="ChangeSpeed(this.value);" value='20' step='10' min='10' max='50'>
+      </div>
+      <div class="time">
+        00:30
+      </div>
+      <div class="wind">
+        <input type="range" id='windspeed' value="10" onchange='windspeed = parseInt(this.value);' min='0' max='50' step='10'>
+        <div class="windrand">
+          <div class="sk1 sk"></div>
+          <div class="sk2 sk"></div>
+          <div class="sk3 sk"></div>
+          <div class="sk4 sk"></div>
+        </div>
+      </div>
+      <div class="points">
+
+      </div>
+    </div>
+    <!-- стартовый экран -->
+    <div id='start'>
+      <h2>Angry Birds</h2>
+      <input id='name' type="text" placeholder="Your Name" value="">
+      <div class="">
+         <button type="button" name="button">Play</button>
+      </div>
+    </div>
+    <!-- экран окончания игры -->
+    <div id='end'>
+      <h2></h2>
+      <table>
+        <thead>
+          <td>место</td>
+          <td>имя</td>
+          <td>время</td>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+      <div class="">
+        <button type="button" name="button">Restart</button>
+      </div>
+    </div>
+
+    <!-- подключение скрипта -->
+    <script type="text/javascript" src='./js/index.js'>Restart</script>
+  </body>
+</html>
