@@ -349,4 +349,4 @@ setInterval(SetPoints,2000);
 
 
 let wind = document.querySelector('.wind');
-wind.lastElementChild.addEventListener('click',ChangeWindSpeed);
+wind.children[1].addEventListener('click',ChangeWindSpeed);
