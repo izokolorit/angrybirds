@@ -7,15 +7,13 @@
 
 
 
-/* A STYLE FOR ANGRU BIRDS */
-
 .game{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url('../img/bg.png');
+  background-image: url('./bg.png');
   background-size: 100%;
   overflow: hidden;
 }
@@ -25,7 +23,6 @@
 }
 
 
-/* стили для рогатки */
 #player{
   position: absolute;
   width: 7%;
@@ -34,7 +31,6 @@
 }
 
 
-/* стили для коробок */
 .boxes{
   right: 7%;
   bottom: 3vh;
@@ -42,7 +38,7 @@
   text-align: center;
 }
 
-/* стили для птицы */
+
 .bird{
   bottom: 28vh;
   left: 6.7%;
@@ -52,8 +48,6 @@
 
 
 
-
-/* кейфрейм для группы черных летающих птиц */
 @keyframes birds {
   0%{
     left: 105%;
@@ -64,7 +58,6 @@
 }
 
 
-/* стили для облака */
 #cloud{
   position: absolute;
   top: 5vh;
@@ -73,7 +66,6 @@
 }
 
 
-/* стили для кнопок*/
 .controls{
   border-radius: 50%;
   display: flex;
@@ -134,7 +126,6 @@
 }
 
 
-/* стили для таймера */
 .time{
   top: 20px;
   right: 20px;
@@ -142,7 +133,6 @@
 }
 
 
-/* стили для стратового экрана и экрана окончания игры */
 #start,#end{
   position: absolute;
   background-color: rgba(255,255,255,0.5);
@@ -185,7 +175,7 @@
 }
 
 
-/* стили для таблицы лидеров */
+
 table{
   border: 5px solid #FFF033;
   display: none;
@@ -196,7 +186,6 @@ td{
 
 
 
-/* стили для регуляции скорости ветра */
 
 .windrand{
   position: relative;
@@ -282,7 +271,7 @@ td{
   background-image: linear-gradient(red,blue,green);
 }
 
-/* стили для белых точек */
+
 .points{
   bottom: 0;
   left: 0;
