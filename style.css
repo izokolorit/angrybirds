@@ -196,6 +196,13 @@ td{
   border: 1px solid black;
 }
 
+
+.wind div:last-child,.speed div:last-child{
+  margin-left: 100px;
+  color: white;
+}
+
+
 .sk{
   display: none;
 }
