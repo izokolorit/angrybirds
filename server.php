@@ -2,7 +2,7 @@
   $name = $_POST['name'];
   $time = $_POST['time'];
 
-  $DBH = new PDO('mysql:host=localhost;dbname=web031;charset=utf8','Web03','jKg0ol04');
+  $DBH = new PDO('mysql:host=localhost;dbname=angrybirds;charset=utf8','root','');
   
   $ins = $DBH->prepare("INSERT INTO angrybirds SET name=?,time=?");
   
