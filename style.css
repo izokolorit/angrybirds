@@ -1,0 +1,297 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Underdog', cursive;
+}
+
+
+
+/* A STYLE FOR ANGRU BIRDS */
+
+.game{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/bg.png');
+  background-size: 100%;
+  overflow: hidden;
+}
+
+.game>div{
+  position: absolute;
+}
+
+
+/* стили для рогатки */
+#player{
+  position: absolute;
+  width: 7%;
+  bottom: 3vh;
+  left: 5%;
+}
+
+
+/* стили для коробок */
+.boxes{
+  right: 7%;
+  bottom: 3vh;
+  width: 12%;
+  text-align: center;
+}
+
+/* стили для птицы */
+.bird{
+  bottom: 28vh;
+  left: 6.7%;
+  position: absolute;
+  width: 5%;
+}
+
+
+
+
+/* кейфрейм для группы черных летающих птиц */
+@keyframes birds {
+  0%{
+    left: 105%;
+  }
+  100%{
+    left: -100%;
+  }
+}
+
+
+/* стили для облака */
+#cloud{
+  position: absolute;
+  top: 5vh;
+  left: -200px;
+  animation: cloud 50s linear infinite;
+}
+
+
+/* стили для кнопок*/
+.controls{
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 170px;
+  height: 170px;
+  transform: rotate(45deg);
+  overflow: hidden;
+  justify-content: space-around;
+  bottom: 10vh;
+  left: 52%;
+  cursor: pointer;
+  z-index: 20;
+}
+.controls div{
+  background-color: darkred;
+  width: 49%;
+  height: 49%;
+}
+
+.controls div:hover{
+  background-color: pink;
+}
+
+.controls div:last-child{
+  position: absolute;
+  background-color: grey;
+  border-radius: 50%;
+  top: 25%;
+  left: 25%;
+  text-align: center;
+  padding-top: 15%;
+  font-size: 2em;
+  color: white;
+}
+
+
+.controls div:last-child:hover{
+  background-color: pink;
+  color: black;
+  transform: rotate(-45deg);
+}
+
+
+#birds{
+  position: absolute;
+  top: 20px;
+  left: 110%;
+  width: 20%;
+  animation: birds 10s linear infinite;
+  animation-delay: 5s;
+}
+
+
+.field-to-click{
+  width: 100%;
+  height: 100vh;
+}
+
+
+/* стили для таймера */
+.time{
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+}
+
+
+/* стили для стратового экрана и экрана окончания игры */
+#start,#end{
+  position: absolute;
+  background-color: rgba(255,255,255,0.5);
+  border: 20px solid white;
+  padding: 10vh 30px;
+  width: 60%;
+  left: 20%;
+  height: 70vh;
+  top: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 30;
+}
+
+#end{
+  display: none;
+}
+
+#start button,#end button{
+  background-color: #DDBB33;
+  border: 10px solid #FFF033;
+  padding: 20px;
+  font-size: 2em;
+  font-weight: 900;
+}
+
+
+
+
+#start h2,#end h2{
+  font-size: 40px;
+}
+
+#start>input{
+  font-size: 2em;
+  padding: 20px 5px 20px 5px;
+  text-align: center;
+}
+
+
+/* стили для таблицы лидеров */
+table{
+  border: 5px solid #FFF033;
+  display: none;
+}
+td{
+  padding: 10px;
+}
+
+
+
+/* стили для регуляции скорости ветра */
+
+.windrand{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.sk{
+  display: none;
+}
+
+.sk1{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 50%;
+  top:0;
+  transform-origin: left bottom;
+  background-color: yellow;
+  transform: rotate(0deg) skewY(0deg);
+}
+
+
+.sk2{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 50%;
+  top:0;
+  transform-origin: left bottom;
+  background-color: yellow;
+  transform: rotate(90deg) skewY(0deg);
+}
+
+
+.sk3{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 50%;
+  top:0;
+  transform-origin: left bottom;
+  background-color: yellow;
+  transform: rotate(180deg) skewY(0deg);
+}
+
+
+.sk4{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  left: 50%;
+  top:0;
+  transform-origin: left bottom;
+  background-color: yellow;
+  transform: rotate(270deg) skewY(100deg);
+}
+
+.wind{
+  top: 10px;
+  right: 30%;
+}
+
+.windrand{
+  margin-left: 100px;
+}
+
+
+#windspeed{
+  transform: rotate(-90deg);
+  float: left;
+  margin-top: 50px;
+}
+
+#windspeed::-webkit-slider-runnable-track{
+  background-image: linear-gradient(-90deg,red,blue,green);
+}
+
+#windspeed::-webkit-slider-thumb {
+  background-image: linear-gradient(red,blue,green);
+}
+
+/* стили для белых точек */
+.points{
+  bottom: 0;
+  left: 0;
+}
+
+.points div{
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+}
