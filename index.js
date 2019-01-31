@@ -1,5 +1,4 @@
 
-// объявляем переменные
 
 let line = document.querySelector('.line');
 let player = document.querySelector('#player');
@@ -19,10 +18,8 @@ field.style.bottom = window.innerHeight - player.offsetTop + 'px';
 field.style.left = player.offsetWidth + player.offsetLeft + 'px';
 
 
-// функция, устанавливающая угол для броска птицы по клику пользователя
+
 function SetTraectory(x,y){
-//  line.style.height = '1px';
-//  line.style.borderBottom = '10px dotted white';
   a = x - (player.offsetLeft + player.offsetWidth);
   b =  player.offsetTop - y;
   let c = (a**2 + b**2)**0.5;
@@ -30,14 +27,9 @@ function SetTraectory(x,y){
   deg = Math.acos((a**2 + c**2 - b**2)/(2*a*c));
 
   SetPoints();
-
-  //line.style.transform = 'rotate(-' + deg  * 50 + 'deg)';
-  //line.style.width = c + 'px';
-  //line.style.right = window.innerWidth - x - b*0.3 + 'px';
-  //line.style.bottom = window.innerHeight - player.offsetTop + b/2  + 'px';
 }
 
-// ставим эвент листенер на клик пользователя для установления угла для броска
+
 field.onclick = (e) => {
   SetTraectory(e.clientX,e.clientY);
 }
@@ -82,7 +74,6 @@ function SetPoints(){
 
 
 
-// функция, меняющая скорость броска при ее изменении в одном из двух инпутов
 function ChangeSpeed(x){
   speed = x;
   inp[0].value = speed;
@@ -99,7 +90,6 @@ let redbird = null;
 let box = document.querySelector('.boxes').children;
 
 
-// функция, возвращающая dom-element (box) при столкновении (иначе вернет false)
 function Collapse(x,y,w,h){
   for(let i = 0; i < box.length; i++){
     let q = box[i];
@@ -131,24 +121,8 @@ let one = true;
 
 
 
-// функция, разрушающая элемент при столкновении
 function Remove(el){
 if(el.src.split('.')[el.src.split('.').length-1] != 'gif'){
-/*  if(el.previousElementSibling != undefined){
-    siblings.push(el.previousElementSibling);
-    //el.previousElementSibling.style.marginBottom = el.offsetHeight + 'px';
-
-    setTimeout(()=>{
-        siblings[siblings.length - 1].style.marginBottom = parseInt(siblings[siblings.length - 1].style.marginBottom) + el.offsetHeight + 'px';
-        setTimeout(()=>{
-          siblings[siblings.length - 1].style.transition = 'all 2s';
-          siblings[siblings.length - 1].style.marginBottom = parseInt(siblings[siblings.length - 1].style.marginBottom) - el.offsetHeight + 'px';
-        },50);
-
-    },450);
-
-      siblings[siblings.length - 1].style.transition = '';
-  }*/
     el.src = './img/ruin_box.gif';
     ruin.push(el);
 setTimeout(()=>{
@@ -190,7 +164,6 @@ setTimeout(()=>{
 }
 
 
-// функция движения птицы
 function Shoot(){
   if(flag){
     newy = window.innerHeight - redbird.offsetTop - redbird.offsetHeight + yspeed;
@@ -218,7 +191,6 @@ function Shoot(){
 
 }
 
-// функция выстрела, включается при клике на круглую центральную кнопку
 function Go(){
   document.querySelector('.controls').lastElementChild.removeEventListener('click',Go);
   redbird = document.querySelectorAll('.bird');
@@ -248,7 +220,6 @@ let end_ok = false;
 let end = document.querySelector('#end');
 
 
-// функция таймера
 function Timer(){
   if(end_ok != true){
   if(s >= 0){
@@ -266,7 +237,6 @@ function Timer(){
 let start = document.querySelector('#start');
 
 
-// функция начала игры
 function Start(){
   if(document.querySelector('#name').value.length < 1){
     return false;
@@ -286,8 +256,8 @@ function ReStart(){
   }
 
   document.querySelector('.boxes').innerHTML = `<img src="./img/box.png" alt="box" style='width: 45%;'>
-  <img src="./img/box.png" alt="box" style='width: 70%;'>
-  <img src="./img/box.png" alt="box" style='width: 100%;'>`;
+  <img src="./box.png" alt="box" style='width: 70%;'>
+  <img src="./box.png" alt="box" style='width: 100%;'>`;
   let box = document.querySelector('.boxes').children;
   s = 30;
   time.innerText = '00:30';
@@ -305,7 +275,6 @@ let winddeg = 0;
 let windspeed = 15;
 
 
-// функция изменения желтого круга(частоты изменения направления ветра)
 function ChangeWindSpeed(event){
   let sk = document.querySelectorAll('.sk');
   for(let i = 0; i < 4; i++){
