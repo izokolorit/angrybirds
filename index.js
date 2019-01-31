@@ -123,7 +123,7 @@ let one = true;
 
 function Remove(el){
 if(el.src.split('.')[el.src.split('.').length-1] != 'gif'){
-    el.src = './img/ruin_box.gif';
+    el.src = './ruin_box.gif';
     ruin.push(el);
 setTimeout(()=>{
   for(let i = 0; i < ruin.length; i++){
@@ -201,7 +201,7 @@ function Go(){
   flag = true;
   Shoot();
   let newbird = document.createElement('img');
-  newbird.src = './img/redbird.png';
+  newbird.src = './redbird.png';
   newbird.className = 'bird';
   document.querySelector('.game').appendChild(newbird);
 }
