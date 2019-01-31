@@ -197,7 +197,7 @@ td{
 }
 
 
-.wind div:last-child,.speed div:last-child{
+.wind>div:last-child,.speed>div:last-child{
   margin-left: 100px;
   color: white;
 }
